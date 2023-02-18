@@ -46,9 +46,19 @@
       <section>
         <h3>Chapters</h3>
         <ul>
+          <li>Preface</li>
           <li>Showcase of app</li>
           <li>Components used</li>
+          <li>RDF JavaScript libraries</li>
+          <li>Summary</li>
         </ul>
+      </section>
+
+      <section>
+        <em class="current-chapter">Preface</em>
+
+        <p>I like the world of Linked Data and RDF.</p>
+        <p> Why and when should you use it?</p>
       </section>
 
       <section data-background="https://images.unsplash.com/photo-1659321833933-7253f0874e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
@@ -58,7 +68,9 @@
       <section>
         <p>
           <em>If you want to check it on mobile:</em>
-          <a href="https://influence.danielbeeke.nl">influence.danielbeeke.nl</a>
+          <a href="https://influence.danielbeeke.nl">influence.danielbeeke.nl</a>.
+          <br>
+          The <a href="https://github.com/danielbeeke/influence" target="_blank">code is on github</a>
         </p>
       </section>
 
@@ -74,7 +86,7 @@
 
         <ul>
           <li>Linked Data / DBpedia</li>
-          <li>uHTML</li>
+          <li>µhtml</li>
           <li>Github Pages</li>
           <li>SPARQL queries</li>
         </ul>
@@ -109,10 +121,11 @@
         </ul>
       </section>
       <section>
-        <em class="current-chapter">Components used: <strong>uHTML</strong></em>
+        <em class="current-chapter">Components used: <strong>µhtml</strong></em>
+        <p><a target="_blank" href="https://github.com/WebReflection/uhtml">µhtml</a> is a:</p>
         <ul>
           <li>A micro HTML/SVG renderer</li>
-          <li>Somewhat similar to React</li>
+          <li>Some similarity to React</li>
           <li>Has support for async components / templates</li>
           <li>No virtual DOM</li>
           <li>Uses tagged template literals</li>
@@ -120,7 +133,7 @@
       </section>
 
       <section>
-        <em class="current-chapter">Components used: <strong>uHTML</strong></em>
+        <em class="current-chapter">Components used: <strong>µhtml</strong></em>
 
         <pre>
 <code data-trim data-noescape>
@@ -161,8 +174,8 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
         <em class="current-chapter">Components used: SPARQL queries</em>
 
         <ul>
-          <li>https://dbpedia.org/sparql, an endpoint to try SPARQL queries on</li>
-          <li>https://yasgui.triply.cc, a nice SPARQL editor</li>
+          <li><a href="https://dbpedia.org/sparql" target="_blank">DBpedia SPARQL endpoint</a></li>
+          <li><a href="https://yasgui.triply.cc">Yasgui</a>, a nice SPARQL editor made by <a href="https://triply.cc/" target="_blank">Triply</a></li>
         </ul>
       </section>
 
@@ -256,8 +269,50 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
         </textarea>
       </section>
 
+      <section>
+        <em class="current-chapter">RDF JavaScript libraries</em>
+
+        <p>There is a great <a href="https://rdf.js.org" target="_blank">JavaScript / TypeScript RDF ecosystem</a>.</p>
+        <br>
+        <ul>
+          <li><a target="_blank" href="https://comunica.dev/">Comunica</a>, a query engine</li>
+          <li><a href="https://github.com/rdfjs/N3.js/" target="_blank">N3</a>, an in memory triple store</li>
+          <li><a href="https://github.com/rubensworks/rdf-object.js">RDF Object</a>, a helper to use RDF objects in JavaScript</li>
+        </ul>
+
+      </section>
+
+      <section>
+        <em class="current-chapter">RDF JavaScript libraries: <strong>Comunica</strong></em>
+
+        <p>Comunica is a RDF query engine. It is able to query multiple sources at the same time, joining their data into one.</p>
+      </section>
+
+      <section data-background-iframe="https://query.linkeddatafragments.org/#transientDatasources=%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen;%2F%2Fdata.linkeddatafragments.org%2Fviaf;%2F%2Fdata.linkeddatafragments.org%2Fharvard&query=SELECT%20%3Fperson%20%3Fname%20%3Fbook%20%3Ftitle%20%7B%0A%20%20%3Fperson%20dbpedia-owl%3AbirthPlace%20%5B%20rdfs%3Alabel%20%22Vienna%22%40en%20%5D.%0A%20%20%3FviafID%20schema%3AsameAs%20%3Fperson%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20schema%3Aname%20%3Fname.%0A%20%20%3Fbook%20dc%3Acontributor%20%5B%20foaf%3Aname%20%3Fname%20%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20dc%3Atitle%20%3Ftitle.%0A%7D"></section>
+
+      <section>
+        <em class="current-chapter">Summary</em>
+
+        <p>We viewed and talked about:</p>
+
+        <ul>
+          <li>My app, influence.danielbeeke.nl</li>
+          <li>Linked Data</li>
+          <li>µhtml & GitHub Pages</li>
+          <li>Some SPARQL</li>
+          <li>The JavaScript RDF ecosystem</li>
+        </ul>
+
+      </section>
+
+      <section>
+        <em class="current-chapter">Questions?</em>
+
+        <p>I hope this sparked some imagination and interest in the world of Linked Data.</p>
+        <p>What are you going to make?</p>
 
 
+      </section>
 
     </div>
   </div>
