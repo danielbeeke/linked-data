@@ -1,0 +1,172 @@
+@import url('https://cdn.skypack.dev/-/reveal.js@v4.3.1-326jYhbvhV3tINENPGwx/dist=es2019,mode=raw/dist/reveal.css');
+@import url('https://cdn.skypack.dev/-/reveal.js@v4.3.1-326jYhbvhV3tINENPGwx/dist=es2019,mode=raw/dist/theme/night.css');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500&display=swap');
+
+:root {
+    --r-heading-font: 'Oswald';
+    --r-main-font: 'Work Sans';
+    --r-background-color: rgb(32, 25, 25);
+    --r-link-color: rgb(150, 64, 24);
+    --r-heading-color: white;
+}
+
+body * {
+    letter-spacing: 0 !important;
+}
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    font-weight: 300;
+}
+
+.reveal {
+    width: 100vw;
+    height: 100vh;
+
+    .slides {
+        text-align: left;
+    }
+
+    ul {
+        padding-left: 0em;
+    }
+
+    a {
+        color: var(--r-main-color);
+        border-bottom: 1px dashed var(--r-main-color);
+
+        &:hover {
+            color: var(--r-main-color);
+            border-bottom: 1px solid var(--r-main-color);    
+        }
+    }
+
+    h3, h4 {
+        margin-bottom: 1em;
+    }
+
+    .current-chapter {
+        font-style: italic;
+        margin-bottom: 1em;
+        color: rgba(white, .5);
+        display: block;
+        font-size: .7em;
+    }
+
+    .poster-title {
+        margin-top: 9em;
+        position: relative;
+        text-shadow: 0 12px 26px rgba(black, 4);
+
+        &:after {
+            content: '';
+            width: 100vw;
+            height: 280px;
+            background: linear-gradient(rgba(black, 0), rgba(black, .7));
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            z-index: -1;
+        }
+    }
+
+    iframe {
+        background-color: white;
+        border: none;
+    }
+}
+
+.author-image {
+    width: 160px;
+    border-radius: 50%;
+    border: 3px solid var(--r-main-color);
+    float: right;
+}
+
+.yasgui {
+    .tabsList, 
+    .controlbar, 
+    .yasr_header, 
+    .CodeMirror-gutter-wrapper, 
+    .yasqe_share, 
+    .CodeMirror-gutters, 
+    .dataTables_info, 
+    .dataTables_paginate {
+        display: none !important;
+    }
+
+    .CodeMirror-line  {
+        box-shadow: none;
+    }
+
+    .yasqe .CodeMirror {
+        font-size: 22px;
+
+        .CodeMirror-linenumber {
+            padding-left: 20px;
+        }
+    }
+    .CodeMirror-sizer {
+        margin-left: 10px !important;
+    }
+}
+
+.CodeMirror {
+    border: none !important;
+    background-color: transparent !important;
+    color: rgb(182, 173, 173);
+
+    .cm-atom {
+        color: rgb(79, 114, 179);
+    }
+
+    .cm-keyword {
+        color: rgb(64, 141, 64);
+    }
+
+    .cm-number {
+        color: rgb(79, 150, 146);
+    }
+
+    .cm-string {
+        color: rgb(223, 140, 140);
+    }
+}
+
+table.dataTable tbody tr {
+    background: transparent !important;
+}
+
+table.dataTable {
+    table-layout: fixed !important;
+    font-size: 24px;
+    width: 100% !important;
+
+    th:first-child,
+    td:first-child {
+        display: none;
+    }
+
+    th {
+        background: none !important;
+    }
+
+    td {
+        border-bottom: none;
+    }
+
+    a {
+        border-bottom: none;
+    }
+}
+
+pre {
+    margin: 0 !important;
+    box-shadow: none !important;
+}

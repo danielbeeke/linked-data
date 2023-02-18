@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linked Data and JavaScript</title>
+  <meta name="description" content="A talk about Linked Data and how you can use it in your TypeScript apps.">
+  <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
+
+  <script type="module" src="presentation.js"></script>
+  <link rel="stylesheet" href="style.scss">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+</head>
+<body>
+  <div class="reveal reveal-viewport">
+    <div class="slides">
+
+      <section>
+        <h2>Linked Data and JavaScript</h2>
+        <p>Illustrated with my side project "<a href="https://influence.danielbeeke.nl" target="_blank">Influence</a>"</p>
+      </section>
+
+      <section>
+        <h3>About me</h3>
+      
+        <img class="author-image" src="https://danielbeeke.nl/assets/daniel.jpeg">
+      
+        <a href="https://danielbeeke.nl">Daniël Beeke</a>,<br>
+        <p>Software engineer at <a href="https://www.om.org/mediaworks">MediaWorks</a></p>
+      
+        <p>Dutch, living in Stockerau</p>
+      </section>
+
+      <section>
+        <h3>My background</h3>
+
+        <ul>
+          <li>Fullstack software engineer</li>
+          <li>Working on a headless RDF based CMS</li>
+          <li>I love creating things in my spare time</li>
+        </ul>      
+      </section>
+
+      <section>
+        <h3>Chapters</h3>
+        <ul>
+          <li>Showcase of app</li>
+          <li>Components used</li>
+        </ul>
+      </section>
+
+      <section data-background="https://images.unsplash.com/photo-1659321833933-7253f0874e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+        <h3 class="poster-title">Showcase of app</h3>
+      </section>
+
+      <section>
+        <p>
+          <em>If you want to check it on mobile:</em>
+          <a href="https://influence.danielbeeke.nl">influence.danielbeeke.nl</a>
+        </p>
+      </section>
+
+
+      <section data-background-iframe="https://influence.danielbeeke.nl/" data-background-interactive></section>
+
+      <section data-background="https://images.unsplash.com/photo-1493217465235-252dd9c0d632?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+        <h3 class="poster-title">Components used</h3>
+      </section>
+
+      <section>
+        <em class="current-chapter">Components used</em>
+
+        <ul>
+          <li>Linked Data / DBpedia</li>
+          <li>uHTML</li>
+          <li>Github Pages</li>
+          <li>SPARQL queries</li>
+        </ul>
+
+      </section>
+
+      <section>
+        <em class="current-chapter">Components used: <strong>Linked Data / DBpedia</strong></em>
+        <h4>Paraphrased excerpt of Wikipedia</h4>
+        <p>Linked Data is structured data which is interlinked with other data so it becomes more useful through semantic queries. Part of the vision of linked data is for the Internet to become a global database.</p>
+      </section>
+
+      <section data-background-iframe="https://lod-cloud.net/clouds/lod-cloud.svg"></section>
+
+      <section>
+        <em class="current-chapter">Components used: <strong>Linked Data / DBpedia</strong></em>
+        <ul>
+          <li><a href="https://dbpedia.org/sparql">DBpedia</a> is built upon the Wikipedia info boxes</li>
+          <li>Maintained by a group of German universities</li>
+          <li>Their ontology uses words</li>
+        </ul>
+      </section>
+
+
+      <section>
+        <em class="current-chapter">Components used: <strong>Linked Data / DBpedia</strong></em>
+        <ul>
+          <li><a href="https://query.wikidata.org">Wikidata</a> is another Wikipedia SPARQL endpoint</li>
+          <li>Their ontology uses codes like wd:Q5593</li>
+          <li>Nice interactive SPARQL editor</li>
+          <li>Maintained by Wikimedia</li>
+        </ul>
+      </section>
+      <section>
+        <em class="current-chapter">Components used: <strong>uHTML</strong></em>
+        <ul>
+          <li>A micro HTML/SVG renderer</li>
+          <li>Somewhat similar to React</li>
+          <li>Has support for async components / templates</li>
+          <li>No virtual DOM</li>
+          <li>Uses tagged template literals</li>
+        </ul>
+      </section>
+
+      <section>
+        <em class="current-chapter">Components used: <strong>uHTML</strong></em>
+
+        <pre>
+<code data-trim data-noescape>
+import {render, html, svg} from &#x27;uhtml&#x27;;
+
+render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h1&#x3E;&#x60;);
+</code>
+        </pre>
+
+      </section>
+
+      <section>
+        <em class="current-chapter">Components used: Github Pages</em>
+
+        <ul>
+          <li>Easy way of deploying a simple site</li>
+          <li>Used 404.html as a fallback</li>
+          <li>Free to use own domain name</li>
+          <li>Easy to configure via CNAME</li>
+          <li>Deploy with a git push</li>
+        </ul>
+
+      </section>
+
+      <section>
+        <em class="current-chapter">Components used: SPARQL queries</em>
+
+        <ul>
+          <li>A RDF query language</li>
+          <li>Schemaless in regard to tables</li>
+          <li>But uses ontologies (predicate) for structure</li>
+          <li>Queries: subject, predicate and object</li>
+        </ul>
+
+      </section>
+
+      <section>
+        <em class="current-chapter">Components used: SPARQL queries</em>
+
+        <ul>
+          <li>https://dbpedia.org/sparql, an endpoint to try SPARQL queries on</li>
+          <li>https://yasgui.triply.cc, a nice SPARQL editor</li>
+        </ul>
+      </section>
+
+      <section class="sparql">
+        <textarea>
+          SELECT * {
+            ?s ?p ?o
+          } 
+          LIMIT 4
+        </textarea>
+      </section>
+
+      <section class="sparql">
+        <textarea>
+          PREFIX ols: <http://www.openlinksw.com/schemas/virtrdf#>
+          PREFIX ol: <http://www.openlinksw.com/>
+          PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+          SELECT * {
+            ?s ?p ?o
+          } 
+          LIMIT 4
+        </textarea>
+      </section>
+
+      <section class="sparql">
+        <textarea>
+          PREFIX dbr: <http://dbpedia.org/resource/>
+          PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          
+          SELECT ?name {
+            dbr:Pablo_Picasso rdfs:label ?name
+          }
+          LIMIT 5
+        </textarea>
+      </section>
+
+      <section data-background-iframe="https://dbpedia.org/page/Pablo_Picasso"></section>
+
+      <section class="sparql">
+        <textarea>
+          PREFIX dbr: <http://dbpedia.org/resource/>
+          PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          
+          SELECT ?name {
+            dbr:Pablo_Picasso rdfs:label ?name
+            FILTER(langMatches(lang(?name), "en"))
+          }
+        </textarea>
+      </section>
+
+      <section class="sparql">
+        <textarea>
+          PREFIX dbr: <http://dbpedia.org/resource/>
+          PREFIX dbo: <http://dbpedia.org/ontology/>
+          PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          
+          SELECT ?work {
+            dbr:Pablo_Picasso ^dbo:author ?work
+          } 
+          LIMIT 5
+        </textarea>
+      </section>
+
+      <section class="sparql">
+        <textarea>
+          PREFIX dbr: <http://dbpedia.org/resource/>
+          PREFIX dbo: <http://dbpedia.org/ontology/>
+          PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          
+          SELECT ?work ?museum {
+            dbr:Pablo_Picasso ^dbo:author ?work .
+            ?work dbo:museum ?museum .
+          } 
+          LIMIT 5
+        </textarea>
+      </section>
+
+      <section class="sparql">
+        <textarea>
+          PREFIX dbr: <http://dbpedia.org/resource/>
+          PREFIX dbo: <http://dbpedia.org/ontology/>
+          PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          
+          SELECT ?work ?location {
+            dbr:Pablo_Picasso ^dbo:author ?work .
+            ?work dbo:museum ?museum .
+            ?museum dbo:location ?location .
+          } 
+          LIMIT 5
+        </textarea>
+      </section>
+
+
+
+
+    </div>
+  </div>
+</body>
+</html>
