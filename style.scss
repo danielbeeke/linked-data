@@ -6,8 +6,8 @@
 :root {
     --r-heading-font: 'Oswald';
     --r-main-font: 'Work Sans';
-    --r-background-color: rgb(32, 25, 25);
-    --r-link-color: rgb(150, 64, 24);
+    --r-background-color: rgb(34, 40, 46);
+    --r-link-color: rgb(255, 125, 65);
     --r-heading-color: white;
 }
 
@@ -27,6 +27,29 @@ html, body {
 .reveal {
     width: 100vw;
     height: 100vh;
+    background: url('./bg.svg') center;
+    background-size: cover;
+
+    h2, h3, h4, h5, h6 {
+        color: var(--r-link-color);
+    }
+
+    .qr {
+        width: 400px;
+        margin-top: -80px;
+        margin-bottom: -170px;
+        float: right;
+        border-radius: 30px;
+    }
+
+    .qr-presentation {
+        width: 300px;
+    }
+
+    .wiki-logo {
+        float: right;
+        width: 260px;
+    }
 
     .slides {
         text-align: left;
@@ -34,6 +57,11 @@ html, body {
 
     ul {
         padding-left: 0em;
+    }
+
+    h2 {
+        font-size: 90px;
+        text-shadow: 0 6px 6px rgba(black, .3);
     }
 
     a {
@@ -53,7 +81,8 @@ html, body {
     .current-chapter {
         font-style: italic;
         margin-bottom: 1em;
-        color: rgba(white, .5);
+        // color: rgba(white, .5);
+        color: var(--r-link-color);
         display: block;
         font-size: .7em;
     }
@@ -61,13 +90,13 @@ html, body {
     .poster-title {
         margin-top: 9em;
         position: relative;
-        text-shadow: 0 12px 26px rgba(black, 4);
+        text-shadow: 0 2px 6px rgba(black, 4), 0 12px 26px rgba(black, 4);
 
         &:after {
             content: '';
             width: 100vw;
             height: 280px;
-            background: linear-gradient(rgba(black, 0), rgba(black, .7));
+            background: linear-gradient(rgba(black, 0), rgba(black, 1));
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -123,19 +152,29 @@ html, body {
     color: rgb(182, 173, 173);
 
     .cm-atom {
-        color: rgb(79, 114, 179);
+        color: rgb(223, 82, 82);
     }
 
     .cm-keyword {
-        color: rgb(64, 141, 64);
+        color: rgb(85, 197, 85);
     }
 
     .cm-number {
-        color: rgb(79, 150, 146);
+        color: rgb(176, 212, 47);
     }
 
     .cm-string {
         color: rgb(223, 140, 140);
+    }
+
+    .cm-string-2 {
+        color: rgb(223, 82, 204);
+
+    }
+
+    .cm-variable-3 {
+        color: rgb(134, 204, 3);
+
     }
 }
 

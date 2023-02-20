@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linked Data and JavaScript</title>
+  <title>Querying Wikipedia for real influencers</title>
   <meta name="description" content="A talk about Linked Data and how you can use it in your TypeScript apps.">
   <link href="https://unpkg.com/@triply/yasgui/build/yasgui.min.css" rel="stylesheet" type="text/css" />
   <script src="https://unpkg.com/@triply/yasgui/build/yasgui.min.js"></script>
@@ -18,7 +18,9 @@
     <div class="slides">
 
       <section>
-        <h2>Linked Data and JavaScript</h2>
+        <img class="wiki-logo" src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg">
+        <h2>Querying Wikipedia <br> for <em>real</em> influencers</h2>
+        <br>
         <p>Illustrated with my side project "<a href="https://influence.danielbeeke.nl" target="_blank">Influence</a>"</p>
       </section>
 
@@ -61,23 +63,26 @@
         <p> Why and when should you use it?</p>
       </section>
 
-      <section data-background="https://images.unsplash.com/photo-1659321833933-7253f0874e2f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+      <section>
         <h3 class="poster-title">Showcase of app</h3>
       </section>
 
       <section>
+        <img class="qr qr-app" src="./qr-app.svg">
+
         <p>
-          <em>If you want to check it on mobile:</em>
-          <a href="https://influence.danielbeeke.nl" target="_blank">influence.danielbeeke.nl</a>.
+          <em style="font-size: 24px; margin-bottom: 20px; display: inline-block;">If you want to check it on mobile:</em><br>
+          <a href="https://influence.danielbeeke.nl" target="_blank">influence.danielbeeke.nl</a>
           <br>
           The <a href="https://github.com/danielbeeke/influence" target="_blank">code is on github</a>
         </p>
+
       </section>
 
 
       <section data-background-iframe="https://influence.danielbeeke.nl/" data-background-interactive></section>
 
-      <section data-background="https://images.unsplash.com/photo-1493217465235-252dd9c0d632?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80">
+      <section>
         <h3 class="poster-title">Components used</h3>
       </section>
 
@@ -154,9 +159,9 @@
 
         <pre>
 <code data-trim data-noescape>
-import {render, html, svg} from &#x27;uhtml&#x27;;
+import { render, html } from &#x27;uhtml&#x27;
 
-render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h1&#x3E;&#x60;);
+render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h1&#x3E;&#x60;)
 </code>
         </pre>
 
@@ -164,7 +169,7 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
 
       <section>
         <em class="current-chapter">Components used: <strong>Snowpack</strong></em>
-        <p><a href="https://www.snowpack.dev/">Snowpack</a> was a ESM frontend build tool. Now <a href="https://vitejs.dev/">Vite</a> is an alternative.</p>
+        <p><a href="https://www.snowpack.dev/">Snowpack</a> was a ESM frontend build tool.<br>Now <a href="https://vitejs.dev/">Vite</a> is an alternative.</p>
         <ul>
           <li>Uses ESM modules</li>
           <li>Fast development, no bundling</li>
@@ -202,6 +207,8 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
         <ul>
           <li><a href="https://dbpedia.org/sparql" target="_blank">DBpedia SPARQL endpoint</a></li>
           <li><a href="https://yasgui.triply.cc">Yasgui</a>, a nice SPARQL editor made by <a href="https://triply.cc/" target="_blank">Triply</a></li>
+          <li>SPARQL endpoint outputs various formats: JSON-ld, Triples, XML</li>
+          <li>I used fetch and some JS to process</li>
         </ul>
       </section>
 
@@ -227,6 +234,8 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
         </textarea>
       </section>
 
+      <section data-background-iframe="https://dbpedia.org/page/Pablo_Picasso"></section>
+
       <section class="sparql">
         <textarea>
           PREFIX dbr: <http://dbpedia.org/resource/>
@@ -238,8 +247,6 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
           LIMIT 5
         </textarea>
       </section>
-
-      <section data-background-iframe="https://dbpedia.org/page/Pablo_Picasso"></section>
 
       <section class="sparql">
         <textarea>
@@ -333,6 +340,7 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
 
       <section>
         <em class="current-chapter">Questions?</em>
+        <img class="qr qr-presentation" src="./qr-presentation.svg">
 
         <p>I hope this sparked some imagination and interest in the world of Linked Data.</p>
         <p>What are you going to make?</p>
