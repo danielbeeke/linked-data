@@ -27,7 +27,7 @@ html, body {
 .reveal {
     width: 100vw;
     height: 100vh;
-    background: url('./bg.svg') center;
+    background: var(--r-background-color) url('./bg.svg') center;
     background-size: cover;
 
     h2, h3, h4, h5, h6 {
@@ -44,6 +44,11 @@ html, body {
 
     .qr-presentation {
         width: 300px;
+    }
+
+    .iri-highlight {
+        font-weight: bold;
+        color: var(--r-link-color);
     }
 
     .wiki-logo {

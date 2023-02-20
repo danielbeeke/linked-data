@@ -1,4 +1,5 @@
 import Reveal from 'https://cdn.skypack.dev/reveal.js';
+import { longPress } from './longpress';
 
 const hash = location.hash
 location.hash = ''
@@ -24,4 +25,36 @@ let deck = new Reveal({
    margin: 0.00,
    controlsTutorial: false,
  })
+
+window.Reveal = deck
+
 deck.initialize()
+
+
+longPress(() => {
+   fullscreen()
+})
+
+function fullscreen() {
+   if (!document.fullscreenElement && !document.msFullscreenElement
+       && !document.mozFullScreenElement && !document.webkitFullscreenElement) {
+       if (document.body.requestFullscreen) {
+           document.body.requestFullscreen();
+       } else if (document.body.msRequestFullscreen) {
+           document.body.msRequestFullscreen();
+       }else if (document.body.mozRequestFullScreen) {
+           document.body.mozRequestFullScreen();
+       }else if (document.body.webkitRequestFullscreen) {
+           document.body.webkitRequestFullscreen();
+       }
+   } else {
+       if (document.exitFullscreen) {
+           document.exitFullscreen();
+       } else if (document.msExitFullscreen) {
+           document.msExitFullscreen();
+       }else if (document.mozCancelFullScreen) {
+           document.mozCancelFullScreen();
+       }else if (document.webkitCancelFullScreen) {
+           document.webkitCancelFullScreen();
+       }
+   } }
