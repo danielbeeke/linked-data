@@ -93,26 +93,20 @@ html, body {
     }
 
     .poster-title {
-        margin-top: 9em;
+        // margin-top: 9em;
         position: relative;
         text-shadow: 0 2px 6px rgba(black, 4), 0 12px 26px rgba(black, 4);
-
-        &:after {
-            content: '';
-            width: 100vw;
-            height: 280px;
-            background: linear-gradient(rgba(black, 0), rgba(black, 1));
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 0;
-            z-index: -1;
-        }
     }
 
     iframe {
         background-color: white;
         border: none;
+    }
+
+    .progress {
+        bottom: auto;
+        top: 0;
+        height: 8px;
     }
 }
 
