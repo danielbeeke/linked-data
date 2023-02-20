@@ -5,17 +5,18 @@ const hash = location.hash
 location.hash = ''
 const codeBlocks = document.querySelectorAll('.sparql')
 for (const codeBlock of codeBlocks) {
-   const code = codeBlock.children[0].value.replaceAll('          ', '')
+   const code = codeBlock.children[0].value.replaceAll('          ', '').trim()
    codeBlock.innerHTML = ''
    const element = document.createElement('div')
    codeBlock.appendChild(element)
-   const yasgui = new Yasgui(element, {
-   })
+   const yasgui = new Yasgui(element, {})
    const currentTab = yasgui._tabs[Object.keys(yasgui._tabs)[0]]
    currentTab.setQuery(code)
    currentTab.query()
    currentTab.yasqe.display.wrapper.style.height = code.split('\n').length * 36 + 'px'
-   currentTab.show()
+   setTimeout(() => {
+    currentTab.show()
+   }, 1000)
 }
 
 location.hash = hash

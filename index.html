@@ -306,6 +306,7 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
           PREFIX dbr: <http://dbpedia.org/resource/>
           PREFIX dbo: <http://dbpedia.org/ontology/>
           PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          PREFIX schema: <http://schema.org/>
           
           SELECT ?work ?museum ?location {
             dbr:Pablo_Picasso ^dbo:author ?work .
@@ -321,9 +322,8 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
       <section>
         <em class="current-chapter">RDF JavaScript libraries</em>
 
-        <p>There is a great <a href="https://rdf.js.org" target="_blank">JavaScript / TypeScript RDF ecosystem</a>.</p>
-        <br>
         <ul>
+          <li><a href="https://rdf.js.org" target="_blank">rdf.js.org</a>, an overview of RDF libraries</li>
           <li><a target="_blank" href="https://comunica.dev/">Comunica</a>, a query engine</li>
           <li><a href="https://github.com/rdfjs/N3.js/" target="_blank">N3</a>, an in memory triple store</li>
           <li><a href="https://github.com/rubensworks/rdf-object.js">RDF Object</a>, a helper to use RDF objects in JavaScript</li>
