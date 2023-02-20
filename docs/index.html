@@ -302,6 +302,23 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
           LIMIT 5
         </textarea>
       </section>
+      
+      <section class="sparql">
+        <textarea>
+          PREFIX dbr: <http://dbpedia.org/resource/>
+          PREFIX dbo: <http://dbpedia.org/ontology/>
+          PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+          
+          SELECT ?work ?museum ?location {
+            dbr:Pablo_Picasso ^dbo:author ?work .
+            ?work dbo:museum ?museum .
+            ?museum dbo:location ?location .
+            ?location rdf:type ?locationType
+            FILTER(?locationType = schema:Country)
+          } 
+          LIMIT 5
+        </textarea>
+      </section>
 
       <section>
         <em class="current-chapter">RDF JavaScript libraries</em>
@@ -340,11 +357,15 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
       </section>
 
       <section>
-        <em class="current-chapter">Questions?</em>
-        <img class="qr qr-presentation" src="./assets/qr-presentation-73b7fe92.svg">
 
-        <p>I hope this sparked some imagination and interest in the world of Linked Data.</p>
-        <p>What are you going to make?</p>
+
+          <em class="current-chapter">Questions?</em>
+
+          <p style="float:left; max-width: calc(100% - 300px);">I hope this sparked some imagination and interest in the world of Linked Data.
+<br><br>
+            What are you going to make?
+          </p>
+          <img class="qr qr-presentation" src="./assets/qr-presentation-73b7fe92.svg">
 
 
       </section>
