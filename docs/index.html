@@ -12,8 +12,8 @@
   
   
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-  <script type="module" crossorigin src="./assets/index-9bdc435b.js"></script>
-  <link rel="stylesheet" href="./assets/index-dd30a2bd.css">
+  <script type="module" crossorigin src="./assets/index-468c4dab.js"></script>
+  <link rel="stylesheet" href="./assets/index-47a454a5.css">
 </head>
 <body>
   <div class="reveal reveal-viewport">
@@ -22,8 +22,7 @@
       <section>
         <img class="wiki-logo" src="https://upload.wikimedia.org/wikipedia/commons/8/80/Wikipedia-logo-v2.svg">
         <h2>Querying Wikipedia <br> for <em>real</em> influencers</h2>
-        <br>
-        <p>Illustrated with my side project "<a href="https://influence.danielbeeke.nl" target="_blank">Influence</a>"</p>
+        <p>A small introduction into Linked Data</p>
       </section>
 
       <section>
@@ -76,7 +75,7 @@
           <em style="font-size: 24px; margin-bottom: 20px; display: inline-block;">If you want to check it on mobile:</em><br>
           <a href="https://influence.danielbeeke.nl" target="_blank">influence.danielbeeke.nl</a>
           <br>
-          The <a href="https://github.com/danielbeeke/influence" target="_blank">code is on github</a>
+          <span style="margin-top: 26px; display: inline-block;">The <a href="https://github.com/danielbeeke/influence" target="_blank">code is on github</a></span>
         </p>
 
       </section>
@@ -104,7 +103,7 @@
 
       <section>
         <em class="current-chapter">Components used: <strong>RDF data</strong></em>
-        <p>RDF data exist soley out of triples.</p>
+        <p>RDF data exist soley out of triples or quads.</p>
         <p>
           <strong>Subject</strong>, <strong>predicate</strong> and <strong>object</strong>
         </p>
@@ -114,6 +113,8 @@
           <em>predicate:</em>&nbsp;&nbsp;<strong>http://www.w3.org/1999/02/22-rdf-syntax-ns#<span class="iri-highlight">type</span></strong> <br>
           <em>object:</em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>https://schema.org/<span class="iri-highlight">Event</span></strong>
         </p>
+
+        <em style="font-size: 26px">And sometimes a fourth thing: the graph.</em>
       </section>
 
 
@@ -145,9 +146,8 @@
       </section>
       <section>
         <em class="current-chapter">Components used: <strong>µhtml</strong></em>
-        <p><a target="_blank" href="https://github.com/WebReflection/uhtml">µhtml</a> is a:</p>
         <ul>
-          <li>A micro HTML/SVG renderer</li>
+          <li><a target="_blank" href="https://github.com/WebReflection/uhtml">µhtml</a> is a micro HTML/SVG renderer</li>
           <li>Some similarity to React</li>
           <li>Has support for async components / templates</li>
           <li>No virtual DOM</li>
@@ -170,7 +170,7 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
 
       <section>
         <em class="current-chapter">Components used: <strong>Snowpack</strong></em>
-        <p><a href="https://www.snowpack.dev/">Snowpack</a> was a ESM frontend build tool.<br>Now <a href="https://vitejs.dev/">Vite</a> is an alternative.</p>
+        <p><a href="https://www.snowpack.dev/">Snowpack</a> was an ESM frontend build tool.<br><a href="https://vitejs.dev/">Vite</a> is similar.</p>
         <ul>
           <li>Uses ESM modules</li>
           <li>Fast development, no bundling</li>
@@ -194,7 +194,7 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
         <em class="current-chapter">Components used: <strong>SPARQL queries</strong></em>
 
         <ul>
-          <li>A RDF query language</li>
+          <li>An RDF query language</li>
           <li>Schemaless in regard to tables</li>
           <li>But uses ontologies (predicate) for structure</li>
           <li>Queries: subject, predicate and object</li>

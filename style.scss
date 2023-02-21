@@ -69,6 +69,11 @@ html, body {
     h2 {
         font-size: 90px;
         text-shadow: 0 6px 6px rgba(black, .3);
+
+        em {
+            position: relative;
+            left: -4px;
+        }
     }
 
     a {
@@ -83,6 +88,7 @@ html, body {
 
     h3, h4 {
         margin-bottom: 1em;
+        text-shadow: 0 6px 6px rgba(black, .3);
     }
 
     .current-chapter {
@@ -95,7 +101,7 @@ html, body {
 
     .poster-title {
         position: relative;
-        text-shadow: 0 2px 6px rgba(black, 4), 0 12px 26px rgba(black, 4);
+        text-shadow: 0 6px 6px rgba(black, .3);
     }
 
     iframe {
