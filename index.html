@@ -355,7 +355,7 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
 
       <section>
         <em class="current-chapter">Architecture</em>
-        <p>Do you want to now something specific? Please ask!</p>
+        <p>Do you want to know something specific?<br>Please ask!</p>
       </section>
       <section>
         <em class="current-chapter">RDF JavaScript libraries</em>
@@ -369,10 +369,13 @@ render(document.body, html&#x60;&#x3C;h1&#x3E;Hello &#x1F44B; &#xB5;html&#x3C;/h
 
       </section>
 
+      <section data-background-iframe="https://rdf.js.org"></section>
+
       <section>
         <em class="current-chapter">RDF JavaScript libraries: <strong>Comunica</strong></em>
 
         <p>Comunica is a RDF query engine. It is able to query multiple sources at the same time, joining their data into one.</p>
+        <p>It can query various different sources such as HTML pages, Triple stores and Linked Data fragements.</p>
       </section>
 
       <section data-background-iframe="https://query.linkeddatafragments.org/#transientDatasources=%2F%2Ffragments.dbpedia.org%2F2016-04%2Fen;%2F%2Fdata.linkeddatafragments.org%2Fviaf;%2F%2Fdata.linkeddatafragments.org%2Fharvard&query=SELECT%20%3Fperson%20%3Fname%20%3Fbook%20%3Ftitle%20%7B%0A%20%20%3Fperson%20dbpedia-owl%3AbirthPlace%20%5B%20rdfs%3Alabel%20%22Vienna%22%40en%20%5D.%0A%20%20%3FviafID%20schema%3AsameAs%20%3Fperson%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20schema%3Aname%20%3Fname.%0A%20%20%3Fbook%20dc%3Acontributor%20%5B%20foaf%3Aname%20%3Fname%20%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20dc%3Atitle%20%3Ftitle.%0A%7D"></section>
